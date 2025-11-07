@@ -1,0 +1,14 @@
+# OS
+Thumbs.db
+Desktop.ini
+
+# Office temp
+~$*
+
+# VS Code
+.vscode/
+
+# Node/Vite
+node_modules/
+dist/
+build/

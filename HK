@@ -1,0 +1,725 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <title>Hikari no Kusuri & Dawn Series Portal</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta
+    name="description"
+    content="朝ドラ『ひかりのくすり』と『黎明シリーズ外伝』への公式リンクポータルです。Hikari no Kusuri & Dawn Series official link hub."
+  />
+  <style>
+    :root {
+      --bg: #050816;
+      --bg-soft: #0f172a;
+      --card: #0b1120;
+      --accent: #38bdf8;
+      --accent-soft: rgba(56, 189, 248, 0.15);
+      --text-main: #e5e7eb;
+      --text-sub: #9ca3af;
+      --border-soft: #1f2937;
+      --radius-lg: 18px;
+      --radius-pill: 999px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+        sans-serif;
+      background: radial-gradient(circle at top, #0f172a 0, #020617 55%, #000 100%);
+      color: var(--text-main);
+      line-height: 1.6;
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .page {
+      max-width: 1080px;
+      margin: 0 auto;
+      padding: 24px 16px 40px;
+    }
+
+    header {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      padding: 18px 20px;
+      border-radius: 22px;
+      background: linear-gradient(
+          135deg,
+          rgba(56, 189, 248, 0.14),
+          rgba(129, 140, 248, 0.08)
+        ),
+        radial-gradient(circle at top left, #0f172a, #020617);
+      border: 1px solid rgba(148, 163, 184, 0.35);
+      box-shadow:
+        0 18px 45px rgba(15, 23, 42, 0.9),
+        0 0 0 1px rgba(15, 23, 42, 0.7);
+    }
+
+    .title-main {
+      font-size: clamp(1.7rem, 2.4vw + 0.8rem, 2.1rem);
+      font-weight: 700;
+      letter-spacing: 0.05em;
+    }
+
+    .title-main span {
+      color: var(--accent);
+    }
+
+    .title-sub {
+      font-size: 0.95rem;
+      color: var(--text-sub);
+      max-width: 720px;
+    }
+
+    .header-bottom {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .lang-switch {
+      display: inline-flex;
+      padding: 4px;
+      border-radius: var(--radius-pill);
+      background: rgba(15, 23, 42, 0.85);
+      border: 1px solid rgba(148, 163, 184, 0.5);
+    }
+
+    .lang-btn {
+      border: none;
+      padding: 6px 14px;
+      border-radius: calc(var(--radius-pill) - 2px);
+      font-size: 0.8rem;
+      background: transparent;
+      color: var(--text-sub);
+      cursor: pointer;
+      transition: all 0.15s ease;
+    }
+
+    .lang-btn.active {
+      background: var(--accent);
+      color: #020617;
+      font-weight: 600;
+    }
+
+    .tagline {
+      font-size: 0.8rem;
+      color: var(--text-sub);
+      padding: 4px 10px;
+      border-radius: var(--radius-pill);
+      border: 1px solid rgba(148, 163, 184, 0.4);
+      background: rgba(15, 23, 42, 0.65);
+      white-space: nowrap;
+    }
+
+    main {
+      margin-top: 24px;
+      display: grid;
+      grid-template-columns: minmax(0, 3fr) minmax(0, 2fr);
+      gap: 18px;
+    }
+
+    @media (max-width: 880px) {
+      main {
+        grid-template-columns: minmax(0, 1fr);
+      }
+    }
+
+    .section {
+      background: linear-gradient(
+        135deg,
+        rgba(15, 23, 42, 0.95),
+        rgba(15, 23, 42, 0.96)
+      );
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--border-soft);
+      padding: 18px 18px 16px;
+      box-shadow: 0 12px 30px rgba(15, 23, 42, 0.8);
+    }
+
+    .section:nth-child(1) {
+      background: linear-gradient(
+        135deg,
+        rgba(56, 189, 248, 0.09),
+        rgba(15, 23, 42, 0.97)
+      );
+    }
+
+    .section h2 {
+      margin: 0 0 4px;
+      font-size: 1.05rem;
+      letter-spacing: 0.03em;
+    }
+
+    .section p.lead {
+      margin: 0 0 12px;
+      font-size: 0.85rem;
+      color: var(--text-sub);
+    }
+
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.75rem;
+      padding: 4px 10px;
+      border-radius: var(--radius-pill);
+      background: var(--accent-soft);
+      color: var(--accent);
+      margin-bottom: 10px;
+    }
+
+    .badge {
+      display: inline-block;
+      padding: 2px 6px;
+      border-radius: 999px;
+      font-size: 0.68rem;
+      background: rgba(15, 23, 42, 0.9);
+      border: 1px solid rgba(148, 163, 184, 0.4);
+      color: var(--text-sub);
+      margin-right: 6px;
+    }
+
+    .list {
+      list-style: none;
+      margin: 6px 0 0;
+      padding: 0;
+      font-size: 0.85rem;
+    }
+
+    .list li {
+      padding: 5px 0;
+      border-bottom: 1px dashed rgba(31, 41, 55, 0.7);
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+
+    .list li:last-child {
+      border-bottom: none;
+    }
+
+    .ep-title {
+      font-weight: 500;
+    }
+
+    .ep-meta {
+      font-size: 0.72rem;
+      color: var(--text-sub);
+    }
+
+    .ep-meta span {
+      margin-right: 8px;
+    }
+
+    .link-arrow::after {
+      content: "↗";
+      font-size: 0.75em;
+      margin-left: 4px;
+    }
+
+    .section-small {
+      margin-top: 14px;
+      padding-top: 12px;
+      border-top: 1px dashed rgba(55, 65, 81, 0.8);
+    }
+
+    footer {
+      margin-top: 24px;
+      font-size: 0.75rem;
+      color: var(--text-sub);
+      text-align: center;
+    }
+
+    footer a {
+      font-size: 0.75rem;
+    }
+
+    /* language visibility */
+    [data-lang-block="ja"] {
+      display: block;
+    }
+
+    [data-lang-block="en"] {
+      display: none;
+    }
+
+    .lang-en [data-lang-block="ja"] {
+      display: none;
+    }
+
+    .lang-en [data-lang-block="en"] {
+      display: block;
+    }
+  </style>
+</head>
+<body class="lang-ja">
+  <div class="page">
+    <header>
+      <div>
+        <div class="title-main" data-lang-block="ja">
+          朝ドラ『ひかりのくすり』&nbsp;<span>＋ 黎明シリーズ外伝</span>
+        </div>
+        <div class="title-main" data-lang-block="en">
+          <span>Hikari no Kusuri</span> & Dawn Series Side Stories
+        </div>
+
+        <p class="title-sub" data-lang-block="ja">
+          港町「みなと野」を舞台にした朝ドラ風フィクション
+          『ひかりのくすり』と、同じ世界線に連なる
+          『AI副大臣：黎明のルール』外伝（通貨・資源・エネルギー・教育など）
+          への公式リンクポータルです。
+        </p>
+        <p class="title-sub" data-lang-block="en">
+          This is the official link hub for the morning-drama style fiction
+          <strong>“Hikari no Kusuri”</strong> set in the harbor town Minato-no,
+          and the connected near-future universe of
+          <strong>“AI Deputy Minister: Rules of Dawn”</strong> side stories
+          (currency, resources, energy, education, etc.).
+        </p>
+      </div>
+
+      <div class="header-bottom">
+        <div class="lang-switch" aria-label="Language switch">
+          <button class="lang-btn active" data-lang-btn="ja">日本語</button>
+          <button class="lang-btn" data-lang-btn="en">English</button>
+        </div>
+        <div class="tagline" data-lang-block="ja">
+          note連載への入口 / Entry portal for your note series
+        </div>
+        <div class="tagline" data-lang-block="en">
+          Central gateway to all related note articles
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <!-- 左カラム：ひかりのくすり -->
+      <section class="section">
+        <div class="pill" data-lang-block="ja">
+          🎬 朝ドラシリーズ入口
+        </div>
+        <div class="pill" data-lang-block="en">
+          🎬 Morning drama main series
+        </div>
+
+        <h2 data-lang-block="ja">朝ドラ『ひかりのくすり』本編リンク</h2>
+        <h2 data-lang-block="en">“Hikari no Kusuri” Main Episodes</h2>
+
+        <p class="lead" data-lang-block="ja">
+          まずは「第0話：解説・読み方ガイド」からお読みいただくと、
+          世界観・登場人物・読み方のコツがつかみやすくなります。
+        </p>
+        <p class="lead" data-lang-block="en">
+          We recommend starting from “Episode 0: Guide & How to Read” to
+          quickly grasp the setting, characters, and reading style.
+        </p>
+
+        <ul class="list">
+          <!-- ★ 第0話（読み方ガイド） -->
+          <li>
+            <span class="badge">EP 0</span>
+            <a
+              class="ep-title link-arrow"
+              href="https://note.com/modern_owl1687/n/n65c290b1a6d2"
+              target="_blank"
+              rel="noopener"
+              data-lang-block="ja"
+            >
+              第0話：『ひかりのくすり』解説・読み方ガイド
+            </a>
+            <a
+              class="ep-title link-arrow"
+              href="#"
+              target="_blank"
+              rel="noopener"
+              data-lang-block="en"
+            >
+              Episode 0: “Hikari no Kusuri” – Guide & How to Read
+            </a>
+            <div class="ep-meta" data-lang-block="ja">
+              <span>📍 港町みなと野</span><span>👁 作品全体の入口</span>
+            </div>
+            <div class="ep-meta" data-lang-block="en">
+              <span>📍 Minato-no Harbor Town</span
+              ><span>👁 Overview & reading guide</span>
+            </div>
+          </li>
+
+          <!-- ★ 第1〜15話：URLは # を note の実URLに差し替え -->
+          <li>
+            <span class="badge">EP 1</span>
+            <a href="https://note.com/modern_owl1687/n/n22dbab5a687a" target="_blank" rel="noopener" class="ep-title link-arrow" data-lang-block="ja">
+              第1話：「港町の薬屋の息子」
+            </a>
+            <a href="#" target="_blank" rel="noopener" class="ep-title link-arrow" data-lang-block="en">
+              Episode 1: “The Pharmacist’s Son in a Harbor Town”
+            </a>
+          </li>
+          <li>
+            <span class="badge">EP 2</span>
+            <a href="https://note.com/modern_owl1687/n/n6bf052b6dacd" target="_blank" rel="noopener" class="ep-title link-arrow" data-lang-block="ja">
+              第2話：「対症療法の現場へ」
+            </a>
+            <a href="#" target="_blank" rel="noopener" class="ep-title link-arrow" data-lang-block="en">
+              Episode 2: “Into the World of Symptomatic Therapy”
+            </a>
+          </li>
+          <li>
+            <span class="badge">EP 3</span>
+            <a href="https://note.com/modern_owl1687/n/n475c2b852dd0" target="_blank" rel="noopener" class="ep-title link-arrow" data-lang-block="ja">
+              第3話：「進路希望、記入欄はひとつだけ」
+            </a>
+            <a href="#" target="_blank" rel="noopener" class="ep-title link-arrow" data-lang-block="en">
+              Episode 3: “Only One Box for Future Dreams”
+            </a>
+          </li>
+          <li>
+            <span class="badge">EP 4</span>
+            <a href="https://note.com/modern_owl1687/n/n5c03638474ce" target="_blank" rel="noopener" class="ep-title link-arrow" data-lang-block="ja">
+              第4話：「医学部受験編（模試・挫折…）」
+            </a>
+            <a href="#" target="_blank" rel="noopener" class="ep-title link-arrow" data-lang-block="en">
+              Episode 4: “Entrance Exam Trials”
+            </a>
+          </li>
+          <li>
+            <span class="badge">EP 5上</span>
+            <a href="https://note.com/modern_owl1687/n/ne7af9cd3e48a" target="_blank" rel="noopener" class="ep-title link-arrow" data-lang-block="ja">
+              第5話 上：「不合格通知と、もう一度…」
+            </a>
+            <a href="#" target="_blank" rel="noopener" class="ep-title link-arrow" data-lang-block="en">
+              Episode 5-A: “The Letter of Failure & One More Chance”
+            </a>
+          </li>
+          <li>
+            <span class="badge">EP 5下</span>
+            <a href="https://note.com/modern_owl1687/n/n3fa7a9230196" target="_blank" rel="noopener" class="ep-title link-arrow" data-lang-block="ja">
+              第5話 下：「受験番号は、もう間違えない」
+            </a>
+            <a href="#" target="_blank" rel="noopener" class="ep-title link-arrow" data-lang-block="en">
+              Episode 5-B: “We Won’t Miss the Number Again”
+            </a>
+          </li>
+          <li>
+            <span class="badge">EP 6</span>
+            <a href="https://note.com/modern_owl1687/n/n9fc92692ea75" target="_blank" rel="noopener" class="ep-title link-arrow" data-lang-block="ja">
+              第6話：「白衣の海と、ひとり分の初心」
+            </a>
+            <a href="#" target="_blank" rel="noopener" class="ep-title link-arrow" data-lang-block="en">
+              Episode 6: “A Sea of White Coats & One Small Resolve”
+            </a>
+          </li>
+          <li>
+            <span class="badge">EP 7</span>
+            <a href="https://note.com/modern_owl1687/n/nfe092707c0ef" target="_blank" rel="noopener" class="ep-title link-arrow" data-lang-block="ja">
+              第7話：「医学部という“白衣の海”―キャンパス編」
+            </a>
+            <a href="#" target="_blank" rel="noopener" class="ep-title link-arrow" data-lang-block="en">
+              Episode 7: “Medical School – Sea of White”
+            </a>
+          </li>
+          <li>
+            <span class="badge">EP 8</span>
+            <a href="https://note.com/modern_owl1687/n/n2f64959148af" target="_blank" rel="noopener" class="ep-title link-arrow" data-lang-block="ja">
+              第8話：「対症療法から完治へ —— 准…」
+            </a>
+            <a href="#" target="_blank" rel="noopener" class="ep-title link-arrow" data-lang-block="en">
+              Episode 8: “From Symptom Relief Toward Cure”
+            </a>
+          </li>
+          <li>
+            <span class="badge">EP 9</span>
+            <a href="https://note.com/modern_owl1687/n/naff3f990b68d" target="_blank" rel="noopener" class="ep-title link-arrow" data-lang-block="ja">
+              第9話：「ラボのドアをノックする日」
+            </a>
+            <a href="#" target="_blank" rel="noopener" class="ep-title link-arrow" data-lang-block="en">
+              Episode 9: “The Day He Knocks on the Lab Door”
+            </a>
+          </li>
+          <li>
+            <span class="badge">EP10</span>
+            <a href="#" target="_blank" rel="noopener" class="ep-title link-arrow" data-lang-block="ja">
+              第10話：「細胞が全部死んだ夜」
+            </a>
+            <a href="#" target="_blank" rel="noopener" class="ep-title link-arrow" data-lang-block="en">
+              Episode 10: “The Night All Cells Died”
+            </a>
+          </li>
+          <li>
+            <span class="badge">EP11</span>
+            <a href="#" target="_blank" rel="noopener" class="ep-title link-arrow" data-lang-block="ja">
+              第11話：「今日を守る手のぬくもり」
+            </a>
+            <a href="#" target="_blank" rel="noopener" class="ep-title link-arrow" data-lang-block="en">
+              Episode 11: “The Warm Hands that Protect Today”
+            </a>
+          </li>
+          <li>
+            <span class="badge">EP12</span>
+            <a href="#" target="_blank" rel="noopener" class="ep-title link-arrow" data-lang-block="ja">
+              第12話：「生きるか死ぬかの夜」
+            </a>
+            <a href="#" target="_blank" rel="noopener" class="ep-title link-arrow" data-lang-block="en">
+              Episode 12: “A Night Between Life and Death”
+            </a>
+          </li>
+          <li>
+            <span class="badge">EP13</span>
+            <a href="#" target="_blank" rel="noopener" class="ep-title link-arrow" data-lang-block="ja">
+              第13話：「献血の壁と、mRNAの扉」
+            </a>
+            <a href="#" target="_blank" rel="noopener" class="ep-title link-arrow" data-lang-block="en">
+              Episode 13: “The Wall of Blood Donation & the Door of mRNA”
+            </a>
+          </li>
+          <li>
+            <span class="badge">EP14</span>
+            <a href="#" target="_blank" rel="noopener" class="ep-title link-arrow" data-lang-block="ja">
+              第14話：「カプセルに、明日の医療を…」
+            </a>
+            <a href="#" target="_blank" rel="noopener" class="ep-title link-arrow" data-lang-block="en">
+              Episode 14: “Tomorrow’s Medicine in a Capsule”
+            </a>
+          </li>
+          <li>
+            <span class="badge">EP15</span>
+            <a href="#" target="_blank" rel="noopener" class="ep-title link-arrow" data-lang-block="ja">
+              第15話：「リジェクトメールは突然に」
+            </a>
+            <a href="#" target="_blank" rel="noopener" class="ep-title link-arrow" data-lang-block="en">
+              Episode 15: “The Rejection Mail Arrives Without Warning”
+            </a>
+          </li>
+        </ul>
+
+        <div class="section-small">
+          <p class="lead" data-lang-block="ja">
+            ※ 各リンクの <code>href="#"</code> を、ご自身の note の実際のURLに差し替えてください。
+          </p>
+          <p class="lead" data-lang-block="en">
+            ※ Please replace each <code>href="#”</code> with the actual note
+            URLs of your episodes.
+          </p>
+        </div>
+      </section>
+
+      <!-- 右カラム：黎明シリーズ外伝など -->
+      <section class="section">
+        <div class="pill" data-lang-block="ja">
+          🌏 黎明シリーズ外伝 & 推しエピソード
+        </div>
+        <div class="pill" data-lang-block="en">
+          🌏 Dawn Series Side Stories & Picks
+        </div>
+
+        <h2 data-lang-block="ja">黎明シリーズ外伝（通貨・資源・エネルギー・教育）</h2>
+        <h2 data-lang-block="en">Dawn Series Side Stories</h2>
+
+        <p class="lead" data-lang-block="ja">
+          『AI副大臣：黎明のルール』と同じ世界線にある外伝群です。
+          通貨・資源・エネルギー・教育など、マクロなテーマを物語として描いています。
+          『ひかりのくすり』を気に入ってくださった方へ、世界の“裏側”としておすすめです。
+        </p>
+        <p class="lead" data-lang-block="en">
+          These side stories share the same timeline as
+          “AI Deputy Minister: Rules of Dawn”.
+          They explore macro-themes such as currency, resources, energy,
+          and education through near-future fiction.
+        </p>
+
+        <ul class="list">
+          <li>
+            <span class="badge">Guide</span>
+            <a
+              href="https://note.com/modern_owl1687/n/ne0d32e7de51a?app_launch=false"
+              target="_blank"
+              rel="noopener"
+              class="ep-title link-arrow"
+              data-lang-block="ja"
+            >
+              通貨・資源・エネルギー主権ライン（外伝あらすじ）
+            </a>
+            <a
+              href="https://note.com/modern_owl1687/n/n25154d28202c"
+              target="_blank"
+              rel="noopener"
+              class="ep-title link-arrow"
+              data-lang-block="en"
+            >
+              Currency / Resources / Energy Sovereignty Line – Overview
+            </a>
+          </li>
+          <li>
+            <span class="badge">LUX-01</span>
+            <a
+              href="https://note.com/modern_owl1687/n/n9570e200d7e3"
+              target="_blank"
+              rel="noopener"
+              class="ep-title link-arrow"
+              data-lang-block="ja"
+            >
+              AI副大臣プロローグ編 ― LUX-01誕生前夜
+            </a>
+            <a
+              href="https://note.com/modern_owl1687/n/n54ba1deee5fa"
+              target="_blank"
+              rel="noopener"
+              class="ep-title link-arrow"
+              data-lang-block="en"
+            >
+              AI Deputy Minister: Prologue – The Night Before LUX-01
+            </a>
+          </li>
+          <li>
+            <span class="badge">2032</span>
+            <a
+              href="https://note.com/modern_owl1687/n/n951e57b9293a"
+              target="_blank"
+              rel="noopener"
+              class="ep-title link-arrow"
+              data-lang-block="ja"
+            >
+              8兆円フリーズの夜 ― 通貨主権ショック2032
+            </a>
+            <a
+              href="https://note.com/modern_owl1687/n/nb7f7a314f581"
+              target="_blank"
+              rel="noopener"
+              class="ep-title link-arrow"
+              data-lang-block="en"
+            >
+              The 8-Trillion Freeze Night – Currency Shock 2032
+            </a>
+          </li>
+          <li>
+            <span class="badge">Education</span>
+            <a
+              href="https://note.com/modern_owl1687/n/nae31ef86bc45"
+              target="_blank"
+              rel="noopener"
+              class="ep-title link-arrow"
+              data-lang-block="ja"
+            >
+              教育AI LUX-ED-01 ― 一億教室マップの夜
+            </a>
+            <a
+              href="https://note.com/modern_owl1687/n/nf36833e70ddf"
+              target="_blank"
+              rel="noopener"
+              class="ep-title link-arrow"
+              data-lang-block="en"
+            >
+              Education AI LUX-ED-01 – Night of One-Hundred-Million Classrooms
+            </a>
+          </li>
+          <li>
+            <span class="badge">2035</span>
+            <a
+              href="https://note.com/modern_owl1687/n/nfaa70090efbe"
+              target="_blank"
+              rel="noopener"
+              class="ep-title link-arrow"
+              data-lang-block="ja"
+            >
+              南鳥島レアアース会議の夜 ― 資源主権ショック2035
+            </a>
+            <a
+              href="https://note.com/modern_owl1687/n/n6f62bddc51f6"
+              target="_blank"
+              rel="noopener"
+              class="ep-title link-arrow"
+              data-lang-block="en"
+            >
+              Minamitorishima Rare-Earth Conference Night – Resource Shock 2035
+            </a>
+          </li>
+          <li>
+            <span class="badge">2040</span>
+            <a
+              href="https://note.com/modern_owl1687/n/nefca8730b5c1"
+              target="_blank"
+              rel="noopener"
+              class="ep-title link-arrow"
+              data-lang-block="ja"
+            >
+              ヘリカル・パクト ― エネルギー主権ショック2040
+            </a>
+            <a
+              href="https://note.com/modern_owl1687/n/n08f7b57b24a8"
+              target="_blank"
+              rel="noopener"
+              class="ep-title link-arrow"
+              data-lang-block="en"
+            >
+              Helical Pact – Energy Sovereignty Shock 2040
+            </a>
+          </li>
+        </ul>
+
+        <div class="section-small">
+          <p class="lead" data-lang-block="ja">
+            ※ ここに、今後追加予定の R-17（偵察機ライン）や他の外伝へのリンクも増やしていけます。
+          </p>
+          <p class="lead" data-lang-block="en">
+            ※ You can keep adding future side stories here, including the R-17
+            reconnaissance line and other spin-offs.
+          </p>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div data-lang-block="ja">
+        Hosted on GitHub Pages ／ 作品本文は
+        <a href="https://note.com/modern_owl1687" target="_blank" rel="noopener"
+          >note（machin530）</a
+        >
+        にて連載中。
+      </div>
+      <div data-lang-block="en">
+        Hosted on GitHub Pages. Main stories are serialized on
+        <a href="https://note.com/modern_owl1687" target="_blank" rel="noopener"
+          >note (machin530)</a
+        >.
+      </div>
+    </footer>
+  </div>
+
+  <script>
+    (function () {
+      const body = document.body;
+      const btns = document.querySelectorAll("[data-lang-btn]");
+
+      btns.forEach((btn) => {
+        btn.addEventListener("click", () => {
+          const lang = btn.getAttribute("data-lang-btn");
+          if (lang === "ja") {
+            body.classList.remove("lang-en");
+          } else {
+            body.classList.add("lang-en");
+          }
+          btns.forEach((b) => b.classList.remove("active"));
+          btn.classList.add("active");
+        });
+      });
+    })();
+  </script>
+</body>
+</html>
